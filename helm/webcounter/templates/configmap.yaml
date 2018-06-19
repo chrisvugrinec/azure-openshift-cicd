@@ -1,8 +1,0 @@
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: biab-dev-config
-#  namespace: testproject
-data:
-  biab.dev.host1: redis-local
-
