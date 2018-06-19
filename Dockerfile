@@ -17,4 +17,4 @@ ENV TILLER_NAMESPACE=$TILLER_NAMESPACE
 RUN oc login $OS_MASTER_URL -u=$USER -p=$PASSWORD --insecure-skip-tls-verify
 RUN oc process -f https://github.com/openshift/origin/raw/master/examples/helm/tiller-template.yaml -p TILLER_NAMESPACE=$TILLER_NAMESPACE -p HELM_VERSION=v2.9.0 | oc create -f -
 RUN helm init --tiller-namespace=$TILLER_NAMESPACE
-RUN oc adm policy add-role-to-user admin system:serviceaccount:testproject:tiller
+RUN oc adm policy add-role-to-user admin system:serviceaccount:$TILLER_NAMESPACE:tiller
