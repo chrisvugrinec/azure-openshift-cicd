@@ -1,0 +1,20 @@
+oc adm policy add-cluster-role-to-user developer chris
+oc adm policy add-role-to-group developer testproject
+oc adm policy add-user-to-group chris testproject
+
+
+List who can do what
+oc adm policy who-can create project
+
+oc get rolebindings
+
+oc adm  policy remove-role-from-user admin chris
+
+Users cannot create projects anymore:
+oadm policy remove-cluster-role-from-group self-provisioner system:authenticated system:authenticated:oauth
+
+oc adm groups new developers
+oc adm groups add-users developers chris
+
+oc adm policy add-role-to-group admin developer -n testproject
+oc adm policy add-role-to-user admin chris -n testproject

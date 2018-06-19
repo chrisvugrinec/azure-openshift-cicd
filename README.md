@@ -16,4 +16,4 @@ ci cd demo in vsts, deploy on openshift using helm as package manager. Instructi
 * config your initial build and trigger
 * config your release 
 * the helloworld example can be found in: examples/hworld/  here you will find how the helm package is configure as well
-
+* rolling helm installation example: helm upgrade --install --force webcounter helm/webcounter --recreate-pods —values=image.tag test  --tiller-namespace=test-testproject
